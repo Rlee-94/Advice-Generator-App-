@@ -1,7 +1,35 @@
 .content__container {
   background-color: $content-background-color;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .advice__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+
   background-color: $advice-background-color;
+}
+
+.advice__header {
+  color: $neon-text;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+.advice__text {
+  color: $advice-text;
+  padding: 3rem;
+  margin: 1rem;
+  font-size: 2.2rem;
+  border: 1px solid lime;
+  color: $advice-text;
+}
+
+.advice__img {
+  margin-bottom: 5rem;
 }

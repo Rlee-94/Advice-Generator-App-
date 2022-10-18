@@ -14,12 +14,43 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .content__container {
   background-color: #1f2631;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .advice__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
   background-color: #313a49;
+}
+
+.advice__header {
+  color: #50ffa9;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+.advice__text {
+  color: #d1deec;
+  padding: 3rem;
+  margin: 1rem;
+  font-size: 2.2rem;
+  border: 1px solid lime;
+  color: #d1deec;
+}
+
+.advice__img {
+  margin-bottom: 5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
