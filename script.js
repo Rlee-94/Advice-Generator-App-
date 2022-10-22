@@ -1,24 +1,20 @@
+const adviceNumber = document.querySelector(".advice__number");
 const adviceText = document.querySelector(".advice__text");
-const adviceHeader = document.querySelector(".advice__header");
-const textContainer = document.querySelector(".text__container");
+const diceBtn = document.querySelector(".advice__btn");
 
-function fetchAdviceData() {
-  return fetch("https://api.adviceslip.com/advice").then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP Error: ${response.status}`);
-    }
-    return response.json();
-  });
+function showQuote() {
+  fetch("https://api.adviceslip.com/advice")
+    .then((response) => response.json())
+    .then((data) => data.slip)
+    .then((data) => {
+      adviceNumber.textContent = `Advice #${data.id}`;
+      adviceText.textContent = `"${data.advice}"`;
+    })
+    .catch((error) => {
+      alert(`Error ${error}`);
+    });
 }
 
-async function renderAdviceData() {
-  const data = await fetchAdviceData();
-
-  const {
-    slip: { id, advice },
-  } = data;
-
-  return id, advice;
-}
-
-function renderText() {}
+diceBtn.addEventListener("click", () => {
+  showQuote();
+});
